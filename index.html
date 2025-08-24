@@ -1,1 +1,231 @@
-<h1>hello</h1>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鸳坤 - 原神戏代肝服务</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        paper: {
+                            50: '#FCF9F1',
+                            100: '#F8F1E0',
+                            200: '#F1E3C0',
+                            300: '#E9D5A0',
+                            400: '#E0C680',
+                            500: '#D8B860',
+                            600: '#C0A050',
+                            700: '#9D7F40',
+                            800: '#7A5F30',
+                            900: '#573F20'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Garamond', 'Georgia', 'serif'],
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .texture-bg {
+                background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%239C92AC' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            }
+            .hover-lift {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .hover-lift:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+            .vintage-border {
+                border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='75' height='100'%3E%3Cg fill='none' stroke='%239C92AC' stroke-width='2'%3E%3Cpath d='M1 1h73v98H1z'/%3E%3Cpath d='M8 1V0a8 8 0 0 1 16 0v1M24 1V0a8 8 0 0 1 16 0v1M40 1V0a8 8 0 0 1 16 0v1M56 1V0a8 8 0 0 1 16 0v1'/%3E%3C/g%3E%3C/svg%3E") 25;
+            }
+        }
+    </style>
+</head>
+<body class="bg-paper-100 text-paper-800 texture-bg min-h-screen">
+    <!-- 顶部导航 -->
+    <header class="py-6 border-b border-paper-300">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-md bg-paper-300 flex items-center justify-center">
+                    <i class="fa fa-gamepad text-paper-700"></i>
+                </div>
+                <h1 class="text-2xl font-serif font-bold">鸳坤代肝</h1>
+            </div>
+            <a href="https://www.xiaohongshu.com/user/profile/65e59d930000000000d025ae8?xsec_token=ABu9-F1m3uKSXSlU8KwYJaWsHXiqUPdbM1GqZVXVS46NQ%3D&xsec_source=pc_search" 
+               target="_blank" 
+               class="hidden md:flex items-center space-x-2 bg-paper-800 text-paper-50 px-4 py-2 rounded-md hover:bg-paper-700 transition-colors">
+                <i class="fa fa-book"></i>
+                <span>小红书主页</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-16">
+        <div class="max-w-4xl mx-auto">
+
+            <section class="text-center mb-20">
+                <div class="inline-block mb-6">
+                    <span class="bg-paper-200 text-paper-700 px-4 py-1 rounded-full text-sm">鸳坤代肝 · 专注可靠</span>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-serif font-bold mb-6 leading-tight">
+                    鸳坤单人代肝<br>用心对待每一份委托
+                </h2>
+                <p class="text-lg text-paper-700 max-w-2xl mx-auto mb-10">
+                    由本人亲自操作，专注游戏代肝服务。安全可靠，效率保障，<br>
+                    让您无需费心，轻松享受游戏乐趣。
+                </p>
+                <a href="https://www.xiaohongshu.com/user/profile/65e59d930000000000d025ae8?xsec_token=ABu9-F1m3uKSXSlU8KwYJaWsHXiqUPdbM1GqZVXVS46NQ%3D&xsec_source=pc_search" 
+                   target="_blank" 
+                   class="inline-block bg-paper-800 text-paper-50 px-8 py-4 rounded-md hover:bg-paper-700 transition-colors font-medium text-lg hover-lift">
+                    前往小红书私信咨询
+                </a>
+            </section>
+
+            <!-- 单人服务特点 -->
+            <section class="mb-20">
+                <div class="bg-paper-50 rounded-lg p-8 border border-paper-200 shadow-sm">
+                    <h3 class="text-2xl font-serif font-bold mb-6 text-center">为什么选择我肝？</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="text-center hover-lift p-4">
+                            <div class="w-16 h-16 bg-paper-200 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fa fa-user text-2xl text-paper-700"></i>
+                            </div>
+                            <h4 class="font-bold text-lg mb-2">专人负责</h4>
+                            <p class="text-paper-700 text-sm">
+                                由本人全程操作，效率快
+                            </p>
+                        </div>
+                        
+                        <div class="text-center hover-lift p-4">
+                            <div class="w-16 h-16 bg-paper-200 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fa fa-shield text-2xl text-paper-700"></i>
+                            </div>
+                            <h4 class="font-bold text-lg mb-2">安全保障</h4>
+                            <p class="text-paper-700 text-sm">
+                                个人信誉担保，不会毁号，确保您的账号安全
+                            </p>
+                        </div>
+                        
+                        <div class="text-center hover-lift p-4">
+                            <div class="w-16 h-16 bg-paper-200 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fa fa-comments text-2xl text-paper-700"></i>
+                            </div>
+                            <h4 class="font-bold text-lg mb-2">直接沟通</h4>
+                            <p class="text-paper-700 text-sm">
+                                无中间环节，直接与操作者沟通，需求传达更准确
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 服务内容 -->
+            <section class="mb-20">
+                <h3 class="text-2xl font-serif font-bold mb-8 text-center">提供的代肝服务</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-paper-50 p-6 rounded-lg border border-paper-200 hover-lift">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <i class="fa fa-trophy text-paper-600 text-xl"></i>
+                            <h4 class="font-bold text-lg">等级提升</h4>
+                        </div>
+                        <p class="text-paper-700 text-sm">
+                            提升冒险等级
+                        </p>
+                    </div>
+                    
+                    <div class="bg-paper-50 p-6 rounded-lg border border-paper-200 hover-lift">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <i class="fa fa-box text-paper-600 text-xl"></i>
+                            <h4 class="font-bold text-lg">原石收集</h4>
+                        </div>
+                        <p class="text-paper-700 text-sm">
+                            原石快速收集，摆脱没有原石的烦恼
+                        </p>
+                    </div>
+                    
+                    <div class="bg-paper-50 p-6 rounded-lg border border-paper-200 hover-lift">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <i class="fa fa-list-alt text-paper-600 text-xl"></i>
+                            <h4 class="font-bold text-lg">任务代做</h4>
+                        </div>
+                        <p class="text-paper-700 text-sm">
+                            完成各类主线、世界和地区任务
+                        </p>
+                    </div>
+                    
+                    <div class="bg-paper-50 p-6 rounded-lg border border-paper-200 hover-lift">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <i class="fa fa-dungeon text-paper-600 text-xl"></i>
+                            <h4 class="font-bold text-lg">地图探索度</h4>
+                        </div>
+                        <p class="text-paper-700 text-sm">
+                            快速提升地图的探索度
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 行动召唤 -->
+            <section class="text-center">
+                <div class="bg-paper-200/50 p-10 rounded-lg border border-paper-300">
+                    <h3 class="text-2xl md:text-3xl font-serif font-bold mb-6">准备好委托了吗？</h3>
+                    <p class="text-paper-700 mb-8 max-w-xl mx-auto">
+                        所有业务详情和委托流程，都可以私信我，欢迎随时咨询
+                    </p>
+                    <a href="https://www.xiaohongshu.com/user/profile/65e59d930000000000d025ae8?xsec_token=ABu9-F1m3uKSXSlU8KwYJaWsHXiqUPdbM1GqZVXVS46NQ%3D&xsec_source=pc_search" 
+                       target="_blank" 
+                       class="inline-block bg-paper-800 text-paper-50 px-8 py-4 rounded-md hover:bg-paper-700 transition-colors font-medium hover-lift">
+                        <i class="fa fa-external-link mr-2"></i>
+                        访问我的小红书主页
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="py-8 border-t border-paper-300 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://www.xiaohongshu.com/user/profile/65e59d930000000000d025ae8?xsec_token=ABu9-F1m3uKSXSlU8KwYJaWsHXiqUPdbM1GqZVXVS46NQ%3D&xsec_source=pc_search" 
+                   target="_blank" 
+                   class="text-paper-700 hover:text-paper-900 transition-colors">
+                    <i class="fa fa-book text-xl"></i>
+                </a>
+                <a href="#" class="text-paper-700 hover:text-paper-900 transition-colors">
+                    <i class="fa fa-wechat text-xl"></i>
+                </a>
+            </div>
+            <p class="text-paper-600 text-sm">©  鸳坤代肝 - 原神代肝服务</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+    
